@@ -79,7 +79,7 @@ class PostController extends Controller
 
         /*$tags = $post->tags->pluck('id')->toArray();//crea una coleccion con el campo id  y luego lo pasa a array
         $response = in_array($post->status, $tags);//in_array permite pasar un array y pregnutar si un elemento existe en el array
-        dd($responsa)*/
+        dd($response)*/
 
         Gate::authorize('author', $post); //verifica si el usuario autenticado es el autor del post
         $categories = Category::all();

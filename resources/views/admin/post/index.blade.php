@@ -35,7 +35,7 @@
                     </td>
                     <td class="px-6 py-4">
                        <div class="flex items-center space-x-2">
-                            <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-green text-xs">
+                            <a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-green text-xs">
                                 Editar
                             </a>
                             <form class="delete-form" action="{{ route('admin.posts.destroy',$post) }}" method="POST">

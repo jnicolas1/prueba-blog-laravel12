@@ -1,14 +1,16 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Volt\Volt;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/posts/{post}', [PostController::class, 'show'])
+    ->name('posts.show');
 /*
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -36,4 +38,4 @@ Route::get('/prueba/{post}', function (Post $post) {
 });*/
 
 require __DIR__.'/auth.php';
-//require __DIR__.'/admin.php';
+require __DIR__.'/admin.php';
