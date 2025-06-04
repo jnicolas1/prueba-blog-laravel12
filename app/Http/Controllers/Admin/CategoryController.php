@@ -9,19 +9,14 @@ use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Gate;
 
-class CategoryController extends Controller //implements HasMiddleware
+class CategoryController extends Controller implements HasMiddleware
 {
-    /*public static function middleware()
+    public static function middleware() : array
     {
         return 	[
-           // 'admin'
-           new Middleware(
-                'admin', 
-                //only: ['index',  'edit',]
-                except: ['index',  'edit']
-            ),
+           new Middleware('can:manage categories'),
         ];
-    }*/
+    }
 
     /**
      * Display a listing of the resource.
